@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bright Spark Academy | Premium Pre-School & Creative Learning</title>
+    <meta name="description"
+        content="Nurturing young minds with love and creativity. Join Bright Spark Academy for a premium learning experience.">
+
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS v4 -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style type="text/tailwindcss">
+        @theme {
+            --font-outfit: "Outfit", sans-serif;
+            --color-brand-yellow: #FFD93D;
+            --color-brand-blue: #4D96FF;
+            --color-brand-green: #6BCB77;
+            --color-brand-orange: #FF6B6B;
+            --color-brand-dark: #2D3436;
+        }
+
+        body {
+            font-family: var(--font-outfit);
+            color: var(--color-brand-dark);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .blob {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: linear-gradient(180deg, rgba(255, 217, 61, 0.2) 0%, rgba(77, 150, 255, 0.2) 100%);
+            filter: blur(80px);
+            border-radius: 50%;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 overflow-x-hidden">
+
+    <!-- Header / Navbar -->
+    <nav class="fixed top-0 w-full z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <img src="assets/logo.png" alt="Bright Spark Logo" class="w-10 h-10 object-contain">
+                <span
+                    class="text-2xl font-bold tracking-tight bg-gradient-to-r from-brand-orange to-brand-blue bg-clip-text text-transparent">Bright
+                    Spark</span>
+            </div>
+
+            <div class="hidden md:flex items-center gap-8 font-semibold">
+                <a href="#home" class="hover:text-brand-blue transition-colors">Home</a>
+                <a href="#about" class="hover:text-brand-blue transition-colors">About</a>
+                <a href="#programs" class="hover:text-brand-blue transition-colors">Programs</a>
+                <a href="#contact" class="hover:text-brand-blue transition-colors">Contact</a>
+                <a href="#enroll"
+                    class="bg-brand-orange text-white px-6 py-2.5 rounded-full hover:shadow-lg hover:scale-105 transition-all">Enroll
+                    Now</a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden p-2" id="menu-toggle">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-32 pb-20 overflow-hidden">
+        <div class="blob top-[-100px] right-[-100px]"></div>
+        <div class="blob bottom-[-100px] left-[-100px] bg-brand-green/10"></div>
+
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8" id="hero-text">
+                <div
+                    class="inline-block px-4 py-1.5 bg-brand-blue/10 text-brand-blue rounded-full text-sm font-bold uppercase tracking-wider">
+                    Welcome to the Future of Learning
+                </div>
+                <h1 class="text-6xl md:text-7xl font-bold leading-tight">
+                    Where Every <span class="text-brand-blue">Spark</span> Shines <span
+                        class="text-brand-orange underline decoration-brand-yellow underline-offset-8">Bright</span>
+                </h1>
+                <p class="text-lg text-slate-600 max-w-lg leading-relaxed">
+                    At Bright Spark Academy, we believe in nurturing curiosity, fostering creativity, and building a
+                    foundation for lifelong learning in a safe, play-filled environment.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#enroll"
+                        class="bg-brand-blue text-white px-8 py-4 rounded-full text-lg font-bold hover:shadow-xl hover:-translate-y-1 transition-all flex items-center gap-2">
+                        Start Your Journey <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#tour"
+                        class="glass-card px-8 py-4 rounded-full text-lg font-bold hover:bg-white/50 transition-all border border-slate-200">
+                        Virtual Tour
+                    </a>
+                </div>
+            </div>
+
+            <div class="relative" id="hero-image">
+                <div class="absolute -top-10 -left-10 w-32 h-32 bg-brand-yellow rounded-full z-0 animate-float"></div>
+                <div class="absolute -bottom-10 -right-10 w-48 h-48 bg-brand-green rounded-full z-0 animate-float"
+                    style="animation-delay: 2s"></div>
+                <img src="assets/hero.png" alt="Classroom"
+                    class="relative z-10 w-full rounded-3xl shadow-2xl border-8 border-white object-cover aspect-[4/3]">
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 bg-white border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="text-center group">
+                <div class="text-4xl font-bold text-brand-blue mb-1 group-hover:scale-110 transition-transform">10+
+                </div>
+                <div class="text-sm font-semibold text-slate-500 uppercase">Years Experience</div>
+            </div>
+            <div class="text-center group">
+                <div class="text-4xl font-bold text-brand-orange mb-1 group-hover:scale-110 transition-transform">500+
+                </div>
+                <div class="text-sm font-semibold text-slate-500 uppercase">Happy Graduates</div>
+            </div>
+            <div class="text-center group">
+                <div class="text-4xl font-bold text-brand-green mb-1 group-hover:scale-110 transition-transform">12
+                </div>
+                <div class="text-sm font-semibold text-slate-500 uppercase">Student : Teacher Ratio</div>
+            </div>
+            <div class="text-center group">
+                <div class="text-4xl font-bold text-brand-yellow mb-1 group-hover:scale-110 transition-transform">15+
+                </div>
+                <div class="text-sm font-semibold text-slate-500 uppercase">Creative Programs</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-4xl font-bold mb-4 italic">Our Magic Programs</h2>
+                <p class="text-slate-600 leading-relaxed">Tailored learning paths designed to spark curiosity at every
+                    age and stage of development.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Program 1 -->
+                <div
+                    class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all border border-slate-100 group">
+                    <div
+                        class="w-16 h-16 bg-brand-blue/10 rounded-2xl flex items-center justify-center mb-6 text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-all">
+                        <i data-lucide="baby" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Toddler Stars</h3>
+                    <p class="text-slate-500 mb-6 font-light">18 Months - 3 Years. Sensory exploration and social
+                        bonding through play and song.</p>
+                    <ul class="space-y-2 text-sm font-semibold text-slate-700">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-green"></i>
+                            Sensory Play</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-green"></i>
+                            Basic Vocabulary</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-green"></i>
+                            Motor Skills</li>
+                    </ul>
+                </div>
+
+                <!-- Program 2 -->
+                <div
+                    class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all border border-slate-100 scale-105 relative z-10 group border-brand-orange/20">
+                    <div
+                        class="absolute -top-4 right-8 bg-brand-orange text-white px-4 py-1 rounded-full text-xs font-bold">
+                        Most Popular</div>
+                    <div
+                        class="w-16 h-16 bg-brand-orange/10 rounded-2xl flex items-center justify-center mb-6 text-brand-orange group-hover:bg-brand-orange group-hover:text-white transition-all">
+                        <i data-lucide="brush" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Pre-School Explorers</h3>
+                    <p class="text-slate-500 mb-6 font-light">3 - 4 Years. A focus on language, early math, and creative
+                        expression.</p>
+                    <ul class="space-y-2 text-sm font-semibold text-slate-700">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-green"></i>
+                            Phonics Introduction</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-green"></i>
+                            Creative Arts & Crafts</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-green"></i>
+                            Social Etiquette</li>
+                    </ul>
+                </div>
+
+                <!-- Program 3 -->
+                <div
+                    class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all border border-slate-100 group">
+                    <div
+                        class="w-16 h-16 bg-brand-green/10 rounded-2xl flex items-center justify-center mb-6 text-brand-green group-hover:bg-brand-green group-hover:text-white transition-all">
+                        <i data-lucide="book-open" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Kindergarten Aces</h3>
+                    <p class="text-slate-500 mb-6 font-light">4 - 5 Years. Preparation for elementary school with
+                        advanced academics and leadership.</p>
+                    <ul class="space-y-2 text-sm font-semibold text-slate-700">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-green"></i>
+                            Advanced Literacy</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-green"></i>
+                            Stem Thinking</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-green"></i>
+                            Project Leadership</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section id="about" class="py-24 bg-white overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl">
+                <img src="assets/hero.png" alt="Happy Kids"
+                    class="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8 text-white">
+                    <div>
+                        <p class="text-2xl font-bold italic">"Learning is a treasure that will follow its owner
+                            everywhere."</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-8">
+                <h2 class="text-4xl font-bold">Why Parents Love Bright Spark?</h2>
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <div
+                            class="flex-shrink-0 w-12 h-12 bg-brand-yellow/20 rounded-full flex items-center justify-center text-brand-yellow-700">
+                            <i data-lucide="shield-check" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-1">Safety First</h4>
+                            <p class="text-slate-500 leading-relaxed font-light">24/7 CCTV, secure gated entry, and
+                                rigorous background checks for all staff.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div
+                            class="flex-shrink-0 w-12 h-12 bg-brand-blue/20 rounded-full flex items-center justify-center text-brand-blue">
+                            <i data-lucide="heart" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-1">Caring Environment</h4>
+                            <p class="text-slate-500 leading-relaxed font-light">Small class sizes ensure every child
+                                gets the personalized attention they deserve.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div
+                            class="flex-shrink-0 w-12 h-12 bg-brand-green/20 rounded-full flex items-center justify-center text-brand-green">
+                            <i data-lucide="palette" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-1">Holistic Growth</h4>
+                            <p class="text-slate-500 leading-relaxed font-light">We balance academics with outdoor play,
+                                music, and mindfulness activities.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-24 bg-brand-blue/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Voices of Our Community</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 italic relative">
+                    <i data-lucide="quote" class="absolute top-6 right-6 w-12 h-12 text-slate-100"></i>
+                    <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                        "Choosing Bright Spark was the best decision we made for our daughter. Her confidence has
+                        soared, and she comes home every day excited to share what she's learned!"
+                    </p>
+                    <div class="flex items-center gap-4 not-italic">
+                        <div class="w-12 h-12 bg-slate-200 rounded-full"></div>
+                        <div>
+                            <p class="font-bold">Sarah Jenkins</p>
+                            <p class="text-sm text-slate-400">Mother of Emma, 4 yrs</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 italic relative">
+                    <i data-lucide="quote" class="absolute top-6 right-6 w-12 h-12 text-slate-100"></i>
+                    <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                        "The teachers here are truly special. They genuinely care about each child's individual pace.
+                        The creative labs are simply world-class!"
+                    </p>
+                    <div class="flex items-center gap-4 not-italic">
+                        <div class="w-12 h-12 bg-slate-200 rounded-full"></div>
+                        <div>
+                            <p class="font-bold">Michael Chen</p>
+                            <p class="text-sm text-slate-400">Father of Liam, 3 yrs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / Contact -->
+    <section id="enroll" class="py-24 bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="bg-brand-dark rounded-[3rem] p-12 md:p-20 text-white relative overflow-hidden">
+                <div class="absolute top-[-50px] left-[-50px] w-64 h-64 bg-brand-orange/20 rounded-full blur-[80px]">
+                </div>
+                <div class="absolute bottom-[-50px] right-[-50px] w-64 h-64 bg-brand-blue/20 rounded-full blur-[80px]">
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-16 relative z-10">
+                    <div>
+                        <h2 class="text-5xl font-bold mb-6">Ready to spark some <span
+                                class="text-brand-yellow">magic?</span></h2>
+                        <p class="text-slate-300 text-lg mb-10">Enrollment for the 2026 Session is now open. Schedule a
+                            visit or request a prospectus today.</p>
+                        <ul class="space-y-4">
+                            <li class="flex items-center gap-3 text-slate-200">
+                                <i data-lucide="phone" class="w-5 h-5 text-brand-orange"></i> +1 (555) MAG-IC01
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-200">
+                                <i data-lucide="mail" class="w-5 h-5 text-brand-orange"></i> hello@brightspark.com
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-200">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-brand-orange"></i> 123 Sunshine Avenue,
+                                Meadowbrook
+                            </li>
+                        </ul>
+                    </div>
+
+                    <form class="space-y-6 glass-card p-10 rounded-3xl" id="contact-form">
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-2 ml-2">Parent Name</label>
+                            <input type="text" placeholder="Enter your name"
+                                class="w-full bg-brand-blue/5 border-2 border-brand-blue/20 px-6 py-4 rounded-2xl text-brand-dark placeholder:text-slate-400 focus:outline-none focus:ring-4 focus:ring-brand-blue/20 focus:border-brand-blue focus:bg-white transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-2 ml-2">Email Address</label>
+                            <input type="email" placeholder="hello@example.com"
+                                class="w-full bg-brand-green/5 border-2 border-brand-green/20 px-6 py-4 rounded-2xl text-brand-dark placeholder:text-slate-400 focus:outline-none focus:ring-4 focus:ring-brand-green/20 focus:border-brand-green focus:bg-white transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-2 ml-2">Select Program</label>
+                            <div class="relative">
+                                <select
+                                    class="w-full bg-brand-yellow/5 border-2 border-brand-yellow/20 px-6 py-4 rounded-2xl text-brand-dark focus:outline-none focus:ring-4 focus:ring-brand-yellow/20 focus:border-brand-yellow focus:bg-white transition-all appearance-none cursor-pointer">
+                                    <option>Toddler Stars</option>
+                                    <option>Pre-School Explorers</option>
+                                    <option>Kindergarten Aces</option>
+                                </select>
+                                <div
+                                    class="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-brand-yellow-700">
+                                    <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-brand-orange text-white py-5 rounded-2xl text-xl font-bold hover:shadow-[0_10px_30px_-10px_rgba(255,107,107,0.5)] hover:-translate-y-1 active:scale-95 transition-all cursor-pointer">
+                            Submit Request
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-slate-50">
+        <div
+            class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8 border-t border-slate-200 pt-12">
+            <div class="flex items-center gap-2">
+                <img src="assets/logo.png" alt="Bright Spark Logo" class="w-8 h-8 opacity-70">
+                <span class="text-xl font-bold opacity-70">Bright Spark Academy</span>
+            </div>
+
+            <div class="flex gap-8 text-sm font-semibold text-slate-500">
+                <a href="#" class="hover:text-brand-blue">Privacy Policy</a>
+                <a href="#" class="hover:text-brand-blue">Terms of Service</a>
+                <a href="#" class="hover:text-brand-blue">Careers</a>
+            </div>
+
+            <div class="flex gap-4">
+                <a href="#"
+                    class="w-10 h-10 bg-white shadow-sm rounded-full flex items-center justify-center text-slate-400 hover:text-brand-blue hover:shadow-md transition-all"><i
+                        data-lucide="instagram" class="w-5 h-5"></i></a>
+                <a href="#"
+                    class="w-10 h-10 bg-white shadow-sm rounded-full flex items-center justify-center text-slate-400 hover:text-brand-blue hover:shadow-md transition-all"><i
+                        data-lucide="facebook" class="w-5 h-5"></i></a>
+                <a href="#"
+                    class="w-10 h-10 bg-white shadow-sm rounded-full flex items-center justify-center text-slate-400 hover:text-brand-blue hover:shadow-md transition-all"><i
+                        data-lucide="twitter" class="w-5 h-5"></i></a>
+            </div>
+        </div>
+        <div class="text-center mt-12 text-slate-400 text-xs">
+            &copy; 2026 Bright Spark Academy. All rights reserved. Designed with magic & love.
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-white/80', 'backdrop-blur-md', 'shadow-sm', 'py-2');
+                nav.classList.remove('py-4');
+            } else {
+                nav.classList.remove('bg-white/80', 'backdrop-blur-md', 'shadow-sm', 'py-2');
+                nav.classList.add('py-4');
+            }
+        });
+
+        // Simple Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        menuToggle.addEventListener('click', () => {
+            alert('Mobile menu feature would go here! Built for demo purpose.');
+        });
+
+        // Form submission (Mock)
+        const form = document.getElementById('contact-form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Magic! Your message has been sent. We will contact you soon!');
+            form.reset();
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        // Applying animate class to sections
+        document.querySelectorAll('section > div').forEach(el => {
+            el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>
